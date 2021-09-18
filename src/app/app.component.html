@@ -20,6 +20,5 @@
 </ul>
 
 <div *ngFor="let product of products">
-  <img [src]="product.image" alt="" style="width:100px">
-  {{product.title}}
+  <app-product (productClicked)="clickProduct($event)" [producto]="product"></app-product>
 </div>
