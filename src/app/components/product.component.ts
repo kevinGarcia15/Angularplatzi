@@ -1,4 +1,13 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core'
+import { 
+    Component, 
+    Input, 
+    Output, 
+    EventEmitter, 
+    SimpleChanges, 
+    OnChanges, 
+    OnInit 
+} from '@angular/core'
+
 import { product } from '../product.model'
 
 @Component({
@@ -6,12 +15,22 @@ import { product } from '../product.model'
     templateUrl: './product.component.html',
 })
 
-export class ProductComponent{
+export class ProductComponent implements OnChanges, OnInit{
     @Input() producto: product;
     @Output() productClicked: EventEmitter<any> = new EventEmitter();
- 
+    constructor(){
+        console.log('1. constructor')
+    }
     addCart(){
         console.log("agregado al carrito")
         this.productClicked.emit(this.producto)       
+    }
+
+    ngOnChanges(changes: SimpleChanges){
+        console.log(changes)
+    }
+
+    ngOnInit(){
+        console.log("3. ngOnInit")
     }
 }
