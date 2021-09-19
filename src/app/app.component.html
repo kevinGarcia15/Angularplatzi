@@ -4,6 +4,10 @@
   este es un div
 </div>
 
+<input [(ngModel)]="power"/>
+{{ power | exponential }}
+
+
 <div [ngSwitch]="title">
   <p *ngSwitchCase="'julian'">Este es julian</p>
   <p *ngSwitchCase="'Miguel'">Este es Miguel</p>
