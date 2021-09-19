@@ -1,4 +1,3 @@
-<app-header></app-header>
 <div class="product-grid">
   <div *ngFor="let product of products">
     <app-product (productClicked)="clickProduct($event)" [producto]="product"></app-product>
