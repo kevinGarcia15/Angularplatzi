@@ -7,7 +7,7 @@ import { product } from '../../../product.model';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  products: product[];
+  products: product[] = [];
   constructor(private productService: ProductsService
     ) { }
 
@@ -22,7 +22,7 @@ export class ProductsComponent implements OnInit {
   fetchProducts(){
     this.productService.getAllPorducts()
     .subscribe(products=>{
-      console.log(products)
+      this.products = products;
     })
   }
 }
