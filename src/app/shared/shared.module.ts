@@ -5,7 +5,8 @@ import { HighlightDirective } from './directives/highlight/highlight.directive';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
-
+import { MaterialModule } from '../material/material.module';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -19,10 +20,13 @@ import { RouterModule } from '@angular/router';
     HighlightDirective,
     HeaderComponent,
     FooterComponent,
+    MatBadgeModule
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MaterialModule,
+    MatBadgeModule
   ]
 })
 export class SharedModule { }
