@@ -17,6 +17,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [],
@@ -37,7 +38,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatMenuModule,
     MatSortModule,
     LayoutModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatFormFieldModule
   ],
   exports: [
     MatButtonModule,
@@ -55,7 +57,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatMenuModule,
     MatSortModule,
     LayoutModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatFormFieldModule
+
   ]
 })
 export class MaterialModule { }
