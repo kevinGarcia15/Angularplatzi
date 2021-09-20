@@ -8,7 +8,7 @@ import {
     OnInit 
 } from '@angular/core'
 
-import { product } from '../product.model'
+import { product } from '../../../product.model'
 
 @Component({
     selector: 'app-product',
