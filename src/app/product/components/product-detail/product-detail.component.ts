@@ -36,4 +36,19 @@ export class ProductDetailComponent implements OnInit {
       this.product = product
     })
   }
+
+  createProduct(){
+    const newProducto: product = {
+      id:'223',
+      title:'Produto 2021',
+      image:'https://images.pexels.com/photos/7659526/pexels-photo-7659526.jpeg',
+      price:2000,
+      description: 'producto nuevo de septiembre 2021'
+    }
+
+    this.productService.createProduct(newProducto)
+    .subscribe(product => {
+      console.log(product)
+    })
+  }
 }

@@ -4,7 +4,7 @@
       <mat-card-subtitle>{{ producto.price | currency }}</mat-card-subtitle>
     </mat-card-header>
     <div class="crop-image">
-      <img [src]="producto.image" alt="">
+      <img [src]="producto.image" alt="{{producto.title}}">
     </div>
     <mat-card-content>
       <p>{{ producto.description | slice:0:10 }}</p>
