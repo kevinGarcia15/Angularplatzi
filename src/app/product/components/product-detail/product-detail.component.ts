@@ -51,4 +51,26 @@ export class ProductDetailComponent implements OnInit {
       console.log(product)
     })
   }
+
+
+  updateProduct(){
+    const newProducto: Partial<product> = {
+      title:'Producto editado',
+      price:2500,
+      description: 'producto nuevo de septiembre 2021'
+    }
+
+    this.productService.updateProduct('223', newProducto)
+    .subscribe(product => {
+      console.log(product)
+    })
+  }
+
+  deleteProduct(){
+    this.productService.deleteProduct('15')
+    .subscribe(rta => {
+      console.log(rta)
+    })
+
+  }
 }
