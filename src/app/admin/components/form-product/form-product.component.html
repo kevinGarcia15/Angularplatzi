@@ -1,10 +1,10 @@
-<form [formGroup]="form">
+<form [formGroup]="form"  (ngSubmit)="saveProduct($event)">
     <mat-card>
-        <mat-card-heder>
-        <mat-card-title>
-            Producto
-        </mat-card-title>
-        </mat-card-heder>
+        <mat-card-header>
+            <mat-card-title>
+                Producto
+            </mat-card-title>
+        </mat-card-header>
     </mat-card>
     <mat-card-content>
 
@@ -20,26 +20,49 @@
             </div>
         </div>
 
-        <mat-form-field>
-            <input 
-                matInput 
-                formControlName="title" 
-                type="text" 
-                placeholder="Ingrese un title">
-        </mat-form-field>
-        <mat-form-field>
-            <input 
-                matInput 
-                formControlName="price" 
-                type="number" 
-                placeholder="Ingrese un price">
-        </mat-form-field>
-        <mat-form-field>
-            <input 
-                matInput 
-                formControlName="description" 
-                type="number" 
-                placeholder="Ingrese una descripcion">
-        </mat-form-field>         
+        <div class="row">
+            <div class="col-xs">
+                <mat-form-field>
+                    <input 
+                        matInput 
+                        formControlName="title" 
+                        type="text" 
+                        placeholder="Ingrese un title">
+                </mat-form-field>                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs">
+                <mat-form-field>
+                    <input 
+                        matInput 
+                        formControlName="price" 
+                        type="number" 
+                        placeholder="Ingrese un price">
+                </mat-form-field>                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs">
+                <mat-form-field>
+                    <textarea 
+                        matInput 
+                        formControlName="description" 
+                        type="number" 
+                        placeholder="Ingrese una descripcion">
+                    </textarea>
+                </mat-form-field>         
+            </div>
+        </div>
+        <mat-card-actions>
+            <button 
+                mat-raised-button 
+                type="submit" 
+                [disabled]="form.invalid"> 
+                Guardar
+            </button>
+        </mat-card-actions>    
     </mat-card-content>
 </form>
