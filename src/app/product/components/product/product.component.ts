@@ -9,6 +9,7 @@ import {
 } from '@angular/core'
 
 import { product } from '../../../product.model'
+import {CartService} from './../../../core/services/cart.service'
 
 @Component({
     selector: 'app-product',
@@ -20,12 +21,12 @@ export class ProductComponent implements OnChanges, OnInit{
     today = new Date();
     @Input() producto: product;
     @Output() productClicked: EventEmitter<any> = new EventEmitter();
-    constructor(){
-        console.log('1. constructor')
-    }
+    constructor(
+        private cartService: CartService
+        ){}
+
     addCart(){
-        console.log("agregado al carrito")
-        this.productClicked.emit(this.producto)       
+        this.cartService.addCart(this.producto)       
     }
 
     ngOnChanges(changes: SimpleChanges){
