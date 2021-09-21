@@ -40,7 +40,13 @@
                         formControlName="price" 
                         type="number" 
                         placeholder="Ingrese un price">
-                </mat-form-field>                
+                </mat-form-field>
+                <div *ngIf="form.get('price').errors && form.get('price').dirty">
+                    <mat-error  *ngIf="form.get('price').hasError('price_invalid')">Este campo no es valido</mat-error>                 
+                    <mat-error>
+                        <p *ngIf="form.get('price').hasError('required')">Este campo es obligarorio</p>                
+                    </mat-error>
+                </div>
             </div>
         </div>
 
